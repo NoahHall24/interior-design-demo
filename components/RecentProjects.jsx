@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import { FaExpandArrowsAlt } from 'react-icons/fa';
 
 const projects = [
   {
@@ -56,6 +57,7 @@ const RecentProjects = () => {
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [selectedProject, setSelectedProject] = useState(null);
 
+
   useEffect(() => {
     const updateColumns = () => {
       if (window.innerWidth < 640) setColumns(1);
@@ -79,31 +81,47 @@ const RecentProjects = () => {
     setLightboxOpen(true);
   };
 
+  
+  
   return (
-    <div className="bg-gradient-to-b from-[#F5EBE0] to-[#E4CFC0] py-24 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gradient-to-b from-[#F5F5F5] to-[#E0E0E0] py-32 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-5xl font-light text-center text-slate-800 mb-4">Our Recent Projects</h2>
-        <p className="text-xl text-center text-slate-600 mb-16 max-w-3xl mx-auto">
-        Explore our curated gallery showcasing a selection of our recent projects, where exquisite design and thoughtful craftsmanship come together to create stunning interiors.
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
+        <motion.h2 
+          className="text-6xl font-thin text-center text-[#4A4A4A] mb-4"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          Masterpieces of <span className="text-[#D4AF37]">Design</span>
+        </motion.h2>
+        <motion.p 
+          className="text-xl text-center text-[#6A6A6A] mb-20 max-w-3xl mx-auto font-light"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          Explore our curated gallery showcasing a selection of our recent projects, where exquisite design and thoughtful craftsmanship come together to create stunning interiors.
+        </motion.p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+          {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              className="group relative overflow-hidden rounded-xl shadow-2xl cursor-pointer"
-              whileHover={{ y: -10 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               onClick={() => openLightbox(project, 0)}
             >
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-110"
+                className="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-2xl font-semibold text-white mb-2">{project.title}</h3>
-                  <p className="text-sm text-gray-300">{project.description}</p>
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#4A4A4A] to-[#4A4A4A] opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-center justify-center">
+                <div className="text-center p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-3xl font-light text-[#D4AF37] mb-2 shadow-text">{project.title}</h3>
+                  <p className="text-sm text-white mb-4 shadow-text">{project.description}</p>
+                  <FaExpandArrowsAlt className="text-[#D4AF37] text-2xl mx-auto shadow-icon" />
                 </div>
               </div>
             </motion.div>
@@ -123,11 +141,11 @@ const RecentProjects = () => {
                 <motion.img
                   src={slide.src}
                   alt={selectedProject.title}
-                  initial={{ opacity: 0, scale: 0.8 }}
+                  initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.8 }}
-                  transition={{ duration: 0.3 }}
-                  style={{ maxHeight: '80vh', width: 'auto' }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.4 }}
+                  style={{ maxHeight: '90vh', width: 'auto' }}
                 />
               ),
             }}
@@ -138,8 +156,8 @@ const RecentProjects = () => {
               closeOnBackdropClick: true,
             }}
             styles={{
-              container: { backgroundColor: "rgba(0, 0, 0, .9)" },
-              root: { '--yarl__color_backdrop': 'rgba(0, 0, 0, .9)' },
+              container: { backgroundColor: "rgba(74, 74, 74, 0.95)" },
+              root: { '--yarl__color_backdrop': 'rgba(74, 74, 74, 0.95)' },
             }}
           />
         )}
