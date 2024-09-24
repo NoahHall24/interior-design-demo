@@ -10,21 +10,21 @@ const testimonials = [
     name: "Emily Thompson",
     role: "Homeowner",
     quote: "Lex Interiors transformed our house into a dream home. Their attention to detail and ability to capture our vision was truly remarkable.",
-    image: "/images/profile-plh.svg"
+    image: "/images/profile3.jpg"
   },
   {
     id: 2,
     name: "Michael Chen",
     role: "CEO, Tech Innovations",
     quote: "The team at Lex Interiors brought a level of sophistication to our office space that perfectly reflects our company's ethos. Absolutely outstanding work.",
-    image: "/images/profile-plh.svg"
+    image: "/images/profile2.jpg"
   },
   {
     id: 3,
     name: "Sarah Williams",
     role: "Boutique Hotel Owner",
     quote: "Working with Lex Interiors was a game-changer for our hotel. They created spaces that our guests absolutely adore. The impact on our business has been significant.",
-    image: "/images/profile-plh.svg"
+    image: "/images/profile1.jpg"
   }
 ];
 
