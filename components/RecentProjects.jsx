@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
@@ -80,59 +80,70 @@ const RecentProjects = () => {
   };
 
   return (
-    <div className="bg-[#E4CFC0] py-20 px-4 sm:px-6 lg:px-8">
-      <h2 className="text-4xl font-light text-center text-slate-800 mb-12">Our Recent Projects</h2>
-      <div className="flex flex-wrap -mx-2">
-        {[...Array(columns)].map((_, columnIndex) => (
-          <div key={columnIndex} className="px-2 w-full sm:w-1/2 lg:w-1/3">
-            {getColumnProjects(columnIndex).map((project) => (
-              <motion.div
-                key={project.id}
-                className="mb-4 relative overflow-hidden rounded-lg shadow-lg cursor-pointer"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                onClick={() => openLightbox(project, 0)}
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-auto object-cover"
-                />
-                <motion.div
-                  className="absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center p-4 text-white opacity-0 transition-opacity duration-300"
-                  whileHover={{ opacity: 1 }}
-                >
-                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                  <p className="text-sm text-center">{project.description}</p>
-                </motion.div>
-              </motion.div>
-            ))}
-          </div>
-        ))}
+    <div className="bg-gradient-to-b from-[#F5EBE0] to-[#E4CFC0] py-24 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-5xl font-light text-center text-slate-800 mb-4">Our Recent Projects</h2>
+        <p className="text-xl text-center text-slate-600 mb-16 max-w-3xl mx-auto">
+        Explore our curated gallery showcasing a selection of our recent projects, where exquisite design and thoughtful craftsmanship come together to create stunning interiors.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project) => (
+            <motion.div
+              key={project.id}
+              className="group relative overflow-hidden rounded-xl shadow-2xl cursor-pointer"
+              whileHover={{ y: -10 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              onClick={() => openLightbox(project, 0)}
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 className="text-2xl font-semibold text-white mb-2">{project.title}</h3>
+                  <p className="text-sm text-gray-300">{project.description}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
 
-      {selectedProject && (
-        <Lightbox
-          open={lightboxOpen}
-          close={() => setLightboxOpen(false)}
-          slides={selectedProject.gallery.map(src => ({ src }))}
-          index={lightboxIndex}
-          render={{
-            slide: ({ slide }) => (
-              <img src={slide.src} alt={selectedProject.title} style={{ maxHeight: '80vh', width: 'auto' }} />
-            ),
-          }}
-          carousel={{
-            finite: selectedProject.gallery.length <= 5,
-          }}
-          controller={{
-            closeOnBackdropClick: true,
-          }}
-          styles={{
-            container: { backgroundColor: "rgba(0, 0, 0, .8)" },
-          }}
-        />
-      )}
+      <AnimatePresence>
+        {selectedProject && (
+          <Lightbox
+            open={lightboxOpen}
+            close={() => setLightboxOpen(false)}
+            slides={selectedProject.gallery.map(src => ({ src }))}
+            index={lightboxIndex}
+            render={{
+              slide: ({ slide }) => (
+                <motion.img
+                  src={slide.src}
+                  alt={selectedProject.title}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.3 }}
+                  style={{ maxHeight: '80vh', width: 'auto' }}
+                />
+              ),
+            }}
+            carousel={{
+              finite: selectedProject.gallery.length <= 5,
+            }}
+            controller={{
+              closeOnBackdropClick: true,
+            }}
+            styles={{
+              container: { backgroundColor: "rgba(0, 0, 0, .9)" },
+              root: { '--yarl__color_backdrop': 'rgba(0, 0, 0, .9)' },
+            }}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 };
