@@ -92,7 +92,7 @@ const RecentProjects = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Masterpieces of <span className="text-[#D4AF37]">Design</span>
+          Masterpieces of <span className="text-[#708090]">Design</span>
         </motion.h2>
         <motion.p 
           className="text-xl text-center text-[#6A6A6A] mb-20 max-w-3xl mx-auto font-light"
@@ -103,29 +103,29 @@ const RecentProjects = () => {
           Explore our curated gallery showcasing a selection of our recent projects, where exquisite design and thoughtful craftsmanship come together to create stunning interiors.
         </motion.p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              onClick={() => openLightbox(project, 0)}
-            >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#4A4A4A] to-[#4A4A4A] opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-center justify-center">
-                <div className="text-center p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-3xl font-light text-[#D4AF37] mb-2 shadow-text">{project.title}</h3>
-                  <p className="text-sm text-white mb-4 shadow-text">{project.description}</p>
-                  <FaExpandArrowsAlt className="text-[#D4AF37] text-2xl mx-auto shadow-icon" />
-                </div>
+        {projects.map((project, index) => (
+          <motion.div
+            key={project.id}
+            className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+            onClick={() => openLightbox(project, 0)}
+          >
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div className="text-center p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <h3 className="text-3xl font-light text-[#708090] mb-2 drop-shadow-lg">{project.title}</h3>
+                <p className="text-sm text-white mb-4 drop-shadow">{project.description}</p>
+                <FaExpandArrowsAlt className="text-[#708090] text-2xl mx-auto drop-shadow-lg" />
               </div>
-            </motion.div>
-          ))}
+            </div>
+          </motion.div>
+        ))}
         </div>
       </div>
 

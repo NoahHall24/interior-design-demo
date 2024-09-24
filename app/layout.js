@@ -1,7 +1,7 @@
 import { Playfair_Display } from "next/font/google";
-import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 
 
@@ -24,6 +24,7 @@ export default function RootLayout({ children }) {
       >
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
