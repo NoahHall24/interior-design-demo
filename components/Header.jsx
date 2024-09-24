@@ -26,7 +26,7 @@ const Header = () => {
   return (
     <motion.header
       className={`fixed w-full z-50 transition-all duration-500 ${
-        isScrolled ? 'py-3 bg-white/90 backdrop-blur-md shadow-lg' : 'py-5 bg-transparent'
+        isScrolled ? 'py-3 bg-white/90 backdrop-blur-md shadow-lg' : 'py-5 bg-white'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}

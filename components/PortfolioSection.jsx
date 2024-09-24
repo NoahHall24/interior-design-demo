@@ -3,34 +3,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
-
-const projects = [
-  {
-    id: 1,
-    title: "Opulent Penthouse",
-    category: "Residential",
-    image1: "/images/swiper1.jpg",
-    image2: "/images/swiper4.jpg",
-    description: "A lavish penthouse with panoramic city views and bespoke furnishings."
-  },
-  {
-    id: 2,
-    title: "Avant-Garde Office",
-    category: "Commercial",
-    image1: "/images/swiper1.jpg",
-    image2: "/images/swiper4.jpg",
-    description: "A cutting-edge workspace blending functionality with artistic flair."
-  },
-  {
-    id: 3,
-    title: "Luxe Boutique Hotel",
-    category: "Hospitality",
-    image1: "/images/swiper1.jpg",
-    image2: "/images/swiper4.jpg",
-    description: "An exclusive boutique hotel offering unparalleled luxury and personalized experiences."
-  },
-  // Add more projects as needed
-];
+import Link from 'next/link';
 
 const ProjectReveal = ({ project }) => {
   const sectionRef = useRef(null);
@@ -39,13 +12,10 @@ const ProjectReveal = ({ project }) => {
     offset: ["start end", "end start"]
   });
 
-  // Start and end the animation earlier
   const leftImageX = useTransform(scrollYProgress, [0.2, 0.5], ["0%", "-100%"]);
   const rightImageX = useTransform(scrollYProgress, [0.2, 0.5], ["0%", "100%"]);
   const imageScale = useTransform(scrollYProgress, [0.2, 0.5], [0.8, 1]);
   const imageRotate = useTransform(scrollYProgress, [0.2, 0.5], [5, 0]);
-  
-  // Adjust text animation timing to match image animation
   const textOpacity = useTransform(scrollYProgress, [0.3, 0.6], [0, 1]);
   const textY = useTransform(scrollYProgress, [0.3, 0.6], ["50px", "0px"]);
   const textScale = useTransform(scrollYProgress, [0.3, 0.6], [0.8, 1]);
@@ -77,20 +47,50 @@ const ProjectReveal = ({ project }) => {
         />
       </motion.div>
       <motion.div 
-        className="relative z-20 text-center text-white px-4 max-w-xl" 
+        className="relative z-20 text-center text-white px-4 max-w-xl"
         style={{ opacity: textOpacity, y: textY, scale: textScale }}
       >
         <h2 className="text-3xl font-light mb-4">{project.title}</h2>
         <p className="text-lg text-[#D4AF37] mb-4">{project.category}</p>
-        <p className="text-sm">{project.description}</p>
+        <p className="text-sm mb-6">{project.description}</p>
+        <Link href={`/projects/${project.id}`} className="inline-block bg-[#D4AF37] text-gray-900 px-6 py-2 rounded-full font-semibold hover:bg-opacity-80 transition-colors duration-300">
+          View Project
+        </Link>
       </motion.div>
     </section>
   );
 };
 
 const PortfolioSection = () => {
+  const projects = [
+    {
+      id: 1,
+      title: "Opulent Penthouse",
+      category: "Residential",
+      image1: "/images/swiper1.jpg",
+      image2: "/images/swiper4.jpg",
+      description: "A lavish penthouse with panoramic city views and bespoke furnishings."
+    },
+    {
+      id: 2,
+      title: "Avant-Garde Office",
+      category: "Commercial",
+      image1: "/images/swiper1.jpg",
+      image2: "/images/swiper4.jpg",
+      description: "A cutting-edge workspace blending functionality with artistic flair."
+    },
+    {
+      id: 3,
+      title: "Luxe Boutique Hotel",
+      category: "Hospitality",
+      image1: "/images/swiper1.jpg",
+      image2: "/images/swiper4.jpg",
+      description: "An exclusive boutique hotel offering unparalleled luxury and personalized experiences."
+    },
+  ];
+
   return (
-    <div className="bg-gray-900 text-white pt-24"> {/* Added top padding */}
+    <div className="bg-gray-900 text-white pt-32"> {/* Increased top padding */}
       <div className="container mx-auto px-4 py-16">
         <h1 className="text-5xl font-light mb-4 text-center">
           Our <span className="text-[#D4AF37] font-semibold">Masterpieces</span>
