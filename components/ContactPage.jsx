@@ -144,7 +144,7 @@ const ContactPage = () => {
                 {['Expert designers with years of experience', 'Tailored solutions for every project', 'Attention to detail and quality craftsmanship', 'Seamless project management'].map((item, index) => (
                   <li key={index} className="flex items-start">
                     <svg className="w-6 h-6 text-slate-800 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                    <span>{item}</span>
+                    <span className="text-black">{item}</span>
                   </li>
                 ))}
               </ul>
