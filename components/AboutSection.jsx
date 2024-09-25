@@ -4,6 +4,7 @@ import Image from 'next/image';
 import React from 'react';
 import { motion } from 'framer-motion';
 import { TbArrowUpRight } from 'react-icons/tb';
+import Link from 'next/link';
 
 const AboutSection = () => {
   return (
@@ -63,7 +64,7 @@ const AboutSection = () => {
             <blockquote className="text-[#708090] text-2xl italic leading-relaxed border-l-4 border-[#708090] pl-6 my-12">
               "Design is not just what it looks like and feels like. Design is how it works." - Steve Jobs
             </blockquote>
-            
+            <Link href='/portfolio'>
             <motion.button
               whileHover={{ scale: 1.05, backgroundColor: '#5a6b7a' }}
               whileTap={{ scale: 0.95 }}
@@ -71,6 +72,7 @@ const AboutSection = () => {
             >
               Explore Our Portfolio <TbArrowUpRight className="ml-2 h-6 w-6" />
             </motion.button>
+            </Link>
           </motion.div>
         </div>
       </div>

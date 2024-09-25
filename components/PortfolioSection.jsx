@@ -53,7 +53,7 @@ const ProjectReveal = ({ project }) => {
         <h2 className="text-3xl font-light mb-4">{project.title}</h2>
         <p className="text-lg text-[#D4AF37] mb-4">{project.category}</p>
         <p className="text-sm mb-6">{project.description}</p>
-        <Link href={`/projects/${project.id}`} className="inline-block bg-[#D4AF37] text-gray-900 px-6 py-2 rounded-full font-semibold hover:bg-opacity-80 transition-colors duration-300">
+        <Link href={`/portfolio/${project.id}`} className="inline-block bg-[#D4AF37] text-gray-900 px-6 py-2 rounded-full font-semibold hover:bg-opacity-80 transition-colors duration-300">
           View Project
         </Link>
       </motion.div>
@@ -64,7 +64,7 @@ const ProjectReveal = ({ project }) => {
 const PortfolioSection = () => {
   const projects = [
     {
-      id: 1,
+      id: 'project1',
       title: "Opulent Penthouse",
       category: "Residential",
       image1: "/images/swiper1.jpg",
@@ -72,7 +72,7 @@ const PortfolioSection = () => {
       description: "A lavish penthouse with panoramic city views and bespoke furnishings."
     },
     {
-      id: 2,
+      id: 'project1',
       title: "Avant-Garde Office",
       category: "Commercial",
       image1: "/images/swiper1.jpg",
@@ -80,7 +80,7 @@ const PortfolioSection = () => {
       description: "A cutting-edge workspace blending functionality with artistic flair."
     },
     {
-      id: 3,
+      id: 'project1',
       title: "Luxe Boutique Hotel",
       category: "Hospitality",
       image1: "/images/swiper1.jpg",

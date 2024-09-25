@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const CompanyOverview = () => {
   return (
@@ -25,13 +26,15 @@ const CompanyOverview = () => {
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
               Each project is tailored to reflect your vision and style. Our dedicated team works closely with you, ensuring every detail aligns with your expectations for a truly personalized experience.
             </p>
-            <motion.button
-              className="bg-[#2C3E50] text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-[#1A2530] transition duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Begin Your Transformation
-            </motion.button>
+            <Link href='/contact'>
+              <motion.button
+                className="bg-[#2C3E50] text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-[#1A2530] transition duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Begin Your Transformation
+              </motion.button>
+            </Link>
           </motion.div>
 
           {/* Image */}

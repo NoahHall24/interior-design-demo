@@ -152,42 +152,42 @@ const ContactPage = () => {
 
             {/* Contact Information Section */}
             <div className="bg-slate-800 text-white rounded-lg p-8">
-              <h2 className="text-xl font-semibold mb-4">Contact Information</h2>
-              <p><strong>Address:</strong> 123 Design Street, Creativity City, ST 12345</p>
-              <p><strong>Phone:</strong> (123) 456 -7890</p>
-              <p><strong>Email:</strong> info@yourcompany.com</p>
-              <p><strong>Hours:</strong> Mon-Fri: 9am - 6pm, Sat: 10am - 4pm</p>
+              <h2 className="text-xl font-semibold mb-4">Contact Information:</h2>
+              <p className="tracking-wide mb-1"><strong>Address:</strong> 123 Design Street, Creativity City, ST 12345</p>
+              <p className="tracking-wide mb-1"><strong>Phone:</strong> (123) 456 -7890</p>
+              <p className="tracking-wide mb-1"><strong>Email:</strong> info@yourcompany.com</p>
+              <p className="tracking-wide mb-1"><strong>Hours:</strong> Mon-Fri: 9am - 6pm, Sat: 10am - 4pm</p>
             </div>
 
             {/* Our Process Section */}
             <div className='bg-white shadow-lg rounded-lg p-8'>
-              <h2 className='text-xl font-semibold mb-4'>Our Process</h2>
+              <h2 className='text-xl font-semibold mb-4 text-slateblue'>Our Process</h2>
               <ol className="space-y-4">
                 <li className="flex items-start">
                   <span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0">1</span>
                   <div>
-                    <h3 className="font-semibold">Initial Consultation</h3>
+                    <h3 className="font-semibold text-slateblue">Initial Consultation</h3>
                     <p className="text-gray-600">We discuss your vision, needs, and budget to establish the project scope.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0">2</span>
                   <div>
-                    <h3 className="font-semibold">Design Concept</h3>
+                    <h3 className="font-semibold text-slateblue">Design Concept</h3>
                     <p className="text-gray-600">Our team creates initial design concepts based on your requirements.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0">3</span>
                   <div>
-                    <h3 className="font-semibold">Refinement</h3>
+                    <h3 className="font-semibold text-slateblue">Refinement</h3>
                     <p className="text-gray-600">We refine the chosen concept, incorporating your feedback.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <span className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0">4</span>
                   <div>
-                    <h3 className="font-semibold">Implementation</h3>
+                    <h3 className="font-semibold text-slateblue">Implementation</h3>
                     <p className="text-gray-600">We manage the entire implementation process, from sourcing to installation.</p>
                   </div>
                 </li>

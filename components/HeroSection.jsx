@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FiArrowRight } from 'react-icons/fi';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const HomeSection = () => {
   return (
@@ -23,14 +24,17 @@ const HomeSection = () => {
             <p className="text-xl text-[#5D6D7E] font-light max-w-xl">
               Experience the art of bespoke interior design, where every detail is meticulously crafted to reflect your unique style and elevate your living space.
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05, backgroundColor: '#5a6b7a' }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-[#708090] text-white px-10 py-4 rounded-full text-lg font-light transition duration-300 flex items-center space-x-2"
-            >
-              <span>Explore Our Portfolio</span>
-              <FiArrowRight />
-            </motion.button>
+            
+            <Link href="/contact">
+              <motion.button
+                whileHover={{ scale: 1.05, backgroundColor: '#5a6b7a' }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-[#708090] text-white px-10 py-4 mt-10 rounded-full text-lg font-light transition duration-300 flex items-center space-x-2"
+              >
+                <span>Schedule Consultation</span>
+                <FiArrowRight />
+              </motion.button>
+            </Link>
           </motion.div>
           
           <motion.div
