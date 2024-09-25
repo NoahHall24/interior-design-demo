@@ -21,7 +21,8 @@ export default function Home() {
       <HeroSection />
       <VendorSection />
       <AboutSection />
-      <AboutProcess />      <RecentProjects />
+      <AboutProcess />      
+      <RecentProjects />
       <TestimonialSection />
       </motion.div>
     </>

@@ -57,11 +57,10 @@ const RecentProjects = () => {
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [selectedProject, setSelectedProject] = useState(null);
 
-
   useEffect(() => {
     const updateColumns = () => {
       if (window.innerWidth < 640) setColumns(1);
-      else if (window.innerWidth < 768) setColumns(2);
+      else if (window.innerWidth < 1024) setColumns(2);
       else setColumns(3);
     };
 
@@ -71,23 +70,17 @@ const RecentProjects = () => {
     return () => window.removeEventListener('resize', updateColumns);
   }, []);
 
-  const getColumnProjects = (columnIndex) => {
-    return projects.filter((_, index) => index % columns === columnIndex);
-  };
-
   const openLightbox = (project, index) => {
     setSelectedProject(project);
     setLightboxIndex(index);
     setLightboxOpen(true);
   };
 
-  
-  
   return (
-    <div className="bg-gradient-to-b from-[#F5F5F5] to-[#E0E0E0] py-20 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gradient-to-b from-[#F5F5F5] to-[#E0E0E0] py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.h2 
-          className="text-6xl font-thin text-center text-[#4A4A4A] mb-4"
+          className="text-4xl sm:text-5xl md:text-6xl font-thin text-center text-[#4A4A4A] mb-4"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -95,14 +88,14 @@ const RecentProjects = () => {
           Masterpieces of <span className="text-[#708090]">Design</span>
         </motion.h2>
         <motion.p 
-          className="text-xl text-center text-[#6A6A6A] mb-20 max-w-3xl mx-auto font-light"
+          className="text-base sm:text-lg md:text-xl text-center text-[#6A6A6A] mb-10 sm:mb-16 md:mb-20 max-w-3xl mx-auto font-light"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           Explore our curated gallery showcasing a selection of our recent projects, where exquisite design and thoughtful craftsmanship come together to create stunning interiors.
         </motion.p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-12">
         {projects.map((project, index) => (
           <motion.div
             key={project.id}
@@ -115,13 +108,13 @@ const RecentProjects = () => {
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-110"
+              className="w-full h-64 sm:h-72 md:h-80 lg:h-96 object-cover transition-transform duration-500 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-              <div className="text-center p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <h3 className="text-3xl font-light text-[#708090] mb-2 drop-shadow-lg">{project.title}</h3>
-                <p className="text-sm text-white mb-4 drop-shadow">{project.description}</p>
-                <FaExpandArrowsAlt className="text-[#708090] text-2xl mx-auto drop-shadow-lg" />
+              <div className="text-center p-4 sm:p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <h3 className="text-2xl sm:text-3xl font-light text-[#708090] mb-2 drop-shadow-lg">{project.title}</h3>
+                <p className="text-xs sm:text-sm text-white mb-4 drop-shadow">{project.description}</p>
+                <FaExpandArrowsAlt className="text-[#708090] text-xl sm:text-2xl mx-auto drop-shadow-lg" />
               </div>
             </div>
           </motion.div>
@@ -145,7 +138,7 @@ const RecentProjects = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.4 }}
-                  style={{ maxHeight: '90vh', width: 'auto' }}
+                  style={{ maxHeight: '90vh', width: 'auto', maxWidth: '100%' }}
                 />
               ),
             }}
