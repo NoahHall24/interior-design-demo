@@ -23,7 +23,7 @@ const ProjectReveal = ({ project }) => {
   return (
     <section ref={sectionRef} className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <motion.div 
-        className="absolute w-1/3 h-2/3 left-1/3 z-10"
+        className="absolute w-1/3 h-2/3 left-1/3 z-30"
         style={{ x: leftImageX, scale: imageScale, rotate: imageRotate }}
       >
         <Image
@@ -35,7 +35,7 @@ const ProjectReveal = ({ project }) => {
         />
       </motion.div>
       <motion.div 
-        className="absolute w-1/3 h-2/3 left-1/3 z-10"
+        className="absolute w-1/3 h-2/3 left-1/3 z-30"
         style={{ x: rightImageX, scale: imageScale, rotate: imageRotate }}
       >
         <Image
@@ -90,12 +90,12 @@ const PortfolioSection = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-b from-[#F5F5F5] to-[#E0E0E0] text-slategray pt-32"> {/* Increased top padding */}
-      <div className="container mx-auto px-4 py-16">
+    <div className="bg-gradient-to-b from-[#F5F5F5] to-[#E0E0E0] text-slategray pt-20"> {/* Increased top padding */}
+      <div className="container mx-auto px-4 py-10">
         <h1 className="text-6xl font-thin mb-4 text-center">
           Our <span className="text-[#708090] font-semibold">Masterpieces</span>
         </h1>
-        <h2 className="text-2xl font-light mb-16 text-center text-slategray">
+        <h2 className="text-xl font-light mb-10 text-center text-[#6A6A6A] max-w-3xl mx-auto leading-8">
           Discover our collection of exquisite interior designs, where every project is a testament to our meticulous attention to detail and commitment to transforming spaces into stunning works of art. From concept to completion, we ensure that each element reflects your unique vision and enhances the overall aesthetic.
         </h2>
       </div>

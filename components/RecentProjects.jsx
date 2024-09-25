@@ -84,7 +84,7 @@ const RecentProjects = () => {
   
   
   return (
-    <div className="bg-gradient-to-b from-[#F5F5F5] to-[#E0E0E0] py-32 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gradient-to-b from-[#F5F5F5] to-[#E0E0E0] py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.h2 
           className="text-6xl font-thin text-center text-[#4A4A4A] mb-4"

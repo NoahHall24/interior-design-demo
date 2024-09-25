@@ -1,3 +1,4 @@
+import AboutProcess from "@/components/AboutProcess";
 import AboutSection from "@/components/AboutSection";
 import HeroSection from "@/components/HeroSection";
 import ProcessTimeline from "@/components/ProcessTimeline";
@@ -13,8 +14,7 @@ export default function Home() {
       <HeroSection />
       <VendorSection />
       <AboutSection />
-      <WorkProcess />
-      <RecentProjects />
+      <AboutProcess />      <RecentProjects />
       <TestimonialSection />
     </>
   );
