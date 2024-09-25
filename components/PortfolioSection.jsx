@@ -21,7 +21,7 @@ const ProjectReveal = ({ project }) => {
   const textScale = useTransform(scrollYProgress, [0.3, 0.6], [0.8, 1]);
 
   return (
-    <section ref={sectionRef} className="min-h-screen flex items-center justify-center relative overflow-hidden mb-24">
+    <section ref={sectionRef} className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <motion.div 
         className="absolute w-1/3 h-2/3 left-1/3 z-10"
         style={{ x: leftImageX, scale: imageScale, rotate: imageRotate }}
@@ -47,13 +47,13 @@ const ProjectReveal = ({ project }) => {
         />
       </motion.div>
       <motion.div 
-        className="relative z-20 text-center text-white px-4 max-w-xl"
+        className="relative z-20 text-center text-slateblue px-4 max-w-xl"
         style={{ opacity: textOpacity, y: textY, scale: textScale }}
       >
         <h2 className="text-3xl font-light mb-4">{project.title}</h2>
-        <p className="text-lg text-[#D4AF37] mb-4">{project.category}</p>
-        <p className="text-sm mb-6">{project.description}</p>
-        <Link href={`/portfolio/${project.id}`} className="inline-block bg-[#D4AF37] text-gray-900 px-6 py-2 rounded-full font-semibold hover:bg-opacity-80 transition-colors duration-300">
+        <p className="text-lg text-slategray mb-4">{project.category}</p>
+        <p className="text-sm mb-6 text-slategray">{project.description}</p>
+        <Link href={`/portfolio/${project.id}`} className="inline-block bg-slateblue text-white px-6 py-2 rounded-full font-semibold hover:bg-opacity-80 transition-colors duration-300">
           View Project
         </Link>
       </motion.div>
@@ -90,12 +90,12 @@ const PortfolioSection = () => {
   ];
 
   return (
-    <div className="bg-gray-900 text-white pt-32"> {/* Increased top padding */}
+    <div className="bg-gradient-to-b from-[#F5F5F5] to-[#E0E0E0] text-slategray pt-32"> {/* Increased top padding */}
       <div className="container mx-auto px-4 py-16">
-        <h1 className="text-5xl font-light mb-4 text-center">
-          Our <span className="text-[#D4AF37] font-semibold">Masterpieces</span>
+        <h1 className="text-6xl font-thin mb-4 text-center">
+          Our <span className="text-[#708090] font-semibold">Masterpieces</span>
         </h1>
-        <h2 className="text-2xl font-light mb-16 text-center text-gray-400">
+        <h2 className="text-2xl font-light mb-16 text-center text-slategray">
           Discover our collection of exquisite interior designs, where every project is a testament to our meticulous attention to detail and commitment to transforming spaces into stunning works of art. From concept to completion, we ensure that each element reflects your unique vision and enhances the overall aesthetic.
         </h2>
       </div>

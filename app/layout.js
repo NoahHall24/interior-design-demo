@@ -3,13 +3,11 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-
-
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
-})
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -19,11 +17,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={playfair.className}
-      >
+      <body className={playfair.className}>
         <Header />
-        {children}
+        <main className="pt-24 bg-[#f5f5f5]"> {/* Add padding-top here */}
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
