@@ -49,7 +49,7 @@ export default function RootLayout({ children }) {
       <TransitionProvider>
         <body className={playfair.className}>
           <Header />
-          <main className="pt-24"> {/* Adjust pt-24 as needed */}
+          <main className="pt-24 bg-[#f5f5f5]"> {/* Adjust pt-24 as needed */}
             <TransitionHandler>
               {children}
             </TransitionHandler>

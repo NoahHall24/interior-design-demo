@@ -61,6 +61,9 @@ const ProjectReveal = ({ project }) => {
   );
 };
 
+
+
+
 const PortfolioSection = () => {
   const projects = [
     {
