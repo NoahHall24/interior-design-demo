@@ -33,6 +33,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row gap-12 mb-12">
           {/* Logo and Social Media Column */}
           <div className="text-center md:text-left md:w-[30%]">
+            <Link href="/">
             <motion.h2 
               className="text-4xl font-light mb-4 tracking-wider"
               initial={{ opacity: 0, y: 20 }}
@@ -41,6 +42,7 @@ const Footer = () => {
             >
               LEX INTERIORS
             </motion.h2>
+            </Link>
             <motion.p 
               className="text-sm tracking-wide leading-6 text-gray-300 mb-6"
               initial={{ opacity: 0, y: 20 }}

@@ -14,6 +14,8 @@ const ProjectReveal = ({ project }) => {
 
   const leftImageX = useTransform(scrollYProgress, [0.2, 0.5], ["0%", "-100%"]);
   const rightImageX = useTransform(scrollYProgress, [0.2, 0.5], ["0%", "100%"]);
+  const mobileLeftImageX = useTransform(scrollYProgress, [0.2, 0.5], ["0%", "-150%"]);
+  const mobileRightImageX = useTransform(scrollYProgress, [0.2, 0.5], ["0%", "150%"]);
   const imageScale = useTransform(scrollYProgress, [0.2, 0.5], [0.8, 1]);
   const imageRotate = useTransform(scrollYProgress, [0.2, 0.5], [5, 0]);
   const textOpacity = useTransform(scrollYProgress, [0.3, 0.6], [0, 1]);
@@ -21,48 +23,81 @@ const ProjectReveal = ({ project }) => {
   const textScale = useTransform(scrollYProgress, [0.3, 0.6], [0.8, 1]);
 
   return (
-    <section ref={sectionRef} className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section ref={sectionRef} className="min-h-[60vh] md:min-h-screen flex items-center justify-center relative overflow-hidden py-6 md:py-0">
       <motion.div 
-        className="absolute w-1/3 h-2/3 left-1/3 z-30"
+        className="absolute w-2/5 h-[50vh] left-[30%] z-30 md:block hidden"
         style={{ x: leftImageX, scale: imageScale, rotate: imageRotate }}
       >
-        <Image
-          src={project.image1}
-          alt={`${project.title} - Image 1`}
-          layout="fill"
-          objectFit="cover"
-          className="rounded-lg shadow-2xl"
-        />
+        <div className="relative w-full h-full">
+          <Image
+            src={project.image1}
+            alt={`${project.title} - Image 1`}
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+            className="rounded-lg shadow-2xl"
+          />
+        </div>
       </motion.div>
       <motion.div 
-        className="absolute w-1/3 h-2/3 left-1/3 z-30"
+        className="absolute w-1/2 h-[30vh] left-1/4 z-30 md:hidden block"
+        style={{ x: mobileLeftImageX, scale: imageScale, rotate: imageRotate }}
+      >
+        <div className="relative w-full h-full">
+          <Image
+            src={project.image1}
+            alt={`${project.title} - Image 1`}
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+            className="rounded-lg shadow-2xl"
+          />
+        </div>
+      </motion.div>
+      <motion.div 
+        className="absolute w-2/5 h-[50vh] left-[30%] z-30 md:block hidden"
         style={{ x: rightImageX, scale: imageScale, rotate: imageRotate }}
       >
-        <Image
-          src={project.image2}
-          alt={`${project.title} - Image 2`}
-          layout="fill"
-          objectFit="cover"
-          className="rounded-lg shadow-2xl"
-        />
+        <div className="relative w-full h-full">
+          <Image
+            src={project.image2}
+            alt={`${project.title} - Image 2`}
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+            className="rounded-lg shadow-2xl"
+          />
+        </div>
       </motion.div>
       <motion.div 
-        className="relative z-20 text-center text-slateblue px-4 max-w-xl"
+        className="absolute w-1/2 h-[30vh] right-1/4 z-30 md:hidden block"
+        style={{ x: mobileRightImageX, scale: imageScale, rotate: imageRotate }}
+      >
+        <div className="relative w-full h-full">
+          <Image
+            src={project.image2}
+            alt={`${project.title} - Image 2`}
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+            className="rounded-lg shadow-2xl"
+          />
+        </div>
+      </motion.div>
+      <motion.div 
+        className="relative z-20 text-center text-slateblue px-4 max-w-[90%] md:max-w-xl"
         style={{ opacity: textOpacity, y: textY, scale: textScale }}
       >
-        <h2 className="text-3xl font-light mb-4">{project.title}</h2>
-        <p className="text-lg text-slategray mb-4">{project.category}</p>
-        <p className="text-sm mb-6 text-slategray">{project.description}</p>
-        <Link href={`/portfolio/${project.id}`} className="inline-block bg-slateblue text-white px-6 py-2 rounded-full font-semibold hover:bg-opacity-80 transition-colors duration-300">
+        <h2 className="text-xl md:text-3xl font-light mb-2 md:mb-4">{project.title}</h2>
+        <p className="text-sm md:text-lg text-slategray mb-2 md:mb-4">{project.category}</p>
+        <p className="text-xs md:text-sm mb-3 md:mb-6 text-slategray">{project.description}</p>
+        <Link href={`/portfolio/${project.id}`} className="inline-block bg-slateblue text-white px-3 md:px-6 py-1 md:py-2 rounded-full font-semibold hover:bg-opacity-80 transition-colors duration-300 text-sm md:text-base">
           View Project
         </Link>
       </motion.div>
     </section>
   );
 };
-
-
-
 
 const PortfolioSection = () => {
   const projects = [
@@ -95,10 +130,10 @@ const PortfolioSection = () => {
   return (
     <div className="bg-gradient-to-b from-[#F5F5F5] to-[#E0E0E0] text-slategray pt-20"> {/* Increased top padding */}
       <div className="container mx-auto px-4 py-10">
-        <h1 className="text-6xl font-thin mb-4 text-center">
+        <h1 className="lg:text-6xl text-4xl font-thin mb-4  text-center">
           Our <span className="text-[#708090] font-semibold">Masterpieces</span>
         </h1>
-        <h2 className="text-xl font-light mb-10 text-center text-[#6A6A6A] max-w-3xl mx-auto leading-8">
+        <h2 className="text-lg lg:text-xl font-light mb-10 text-center text-[#6A6A6A] max-w-3xl mx-auto leading-8">
           Discover our collection of exquisite interior designs, where every project is a testament to our meticulous attention to detail and commitment to transforming spaces into stunning works of art. From concept to completion, we ensure that each element reflects your unique vision and enhances the overall aesthetic.
         </h2>
       </div>

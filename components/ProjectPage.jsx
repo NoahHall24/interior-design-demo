@@ -38,15 +38,15 @@ const ProjectPage = ({ project }) => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen pt-24">
+    <div className="bg-[#f5f5f5] min-h-screen pt-16 sm:pt-24">
       <motion.div 
-        className="container mx-auto px-4 py-16 max-w-7xl"
+        className="container mx-auto px-4 py-8 sm:py-16 max-w-7xl"
         initial="initial"
         animate="animate"
         variants={{ animate: { transition: { staggerChildren: 0.1 } } }}
       >
         <motion.div 
-          className="relative mb-24 overflow-hidden rounded-3xl shadow-2xl"
+          className="relative mb-12 sm:mb-24 overflow-hidden rounded-xl sm:rounded-3xl shadow-2xl"
           variants={fadeInUp}
         >
           <Image
@@ -54,14 +54,14 @@ const ProjectPage = ({ project }) => {
             alt={projectData.title}
             width={1920}
             height={1080}
-            className="object-cover w-full h-[70vh]"
+            className="object-cover w-full h-[50vh] sm:h-[70vh]"
           />
           <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end">
-            <div className="p-8 md:p-16 w-full bg-gradient-to-t from-black to-transparent">
-              <h1 className="text-4xl md:text-6xl font-light mb-2 text-white">
+            <div className="p-4 sm:p-8 md:p-16 w-full bg-gradient-to-t from-black to-transparent">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-light mb-2 text-white">
                 {projectData.title}
               </h1>
-              <div className="flex items-center space-x-4 text-gray-300">
+              <div className="flex flex-wrap items-center space-x-2 sm:space-x-4 text-sm sm:text-base text-gray-300">
                 <span>{projectData.location}</span>
                 <span>•</span>
                 <span>{projectData.year}</span>
@@ -72,12 +72,12 @@ const ProjectPage = ({ project }) => {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-16">
           <motion.div variants={fadeInUp}>
-            <h2 className="text-3xl font-semibold mb-6 text-gray-800">Project Overview</h2>
-            <p className="text-gray-600 mb-8 leading-relaxed">{projectData.description}</p>
-            <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
-              <h3 className="text-2xl font-semibold mb-4 text-gray-800">The Challenge</h3>
+            <h2 className="text-2xl sm:text-3xl font-semibold mb-4 sm:mb-6 text-gray-800">Project Overview</h2>
+            <p className="text-gray-600 mb-6 sm:mb-8 leading-relaxed">{projectData.description}</p>
+            <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-6 sm:p-8 mb-8">
+              <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-gray-800">The Challenge</h3>
               <p className="text-gray-600 leading-relaxed">{projectData.challenge}</p>
             </div>
           </motion.div>
@@ -89,24 +89,24 @@ const ProjectPage = ({ project }) => {
                 alt={`${projectData.title} - Image 2`}
                 width={800}
                 height={600}
-                className="rounded-2xl shadow-lg object-cover w-full h-[400px]"
+                className="rounded-xl sm:rounded-2xl shadow-lg object-cover w-full h-[300px] sm:h-[400px]"
               />
             </div>
           </motion.div>
 
           <motion.div variants={fadeInUp} className="md:col-span-2">
-            <div className="bg-gray-800 text-white rounded-2xl shadow-lg p-8 mb-16">
-              <h3 className="text-2xl font-semibold mb-4">Our Solution</h3>
+            <div className="bg-gray-800 text-white rounded-xl sm:rounded-2xl shadow-lg p-6 sm:p-8 mb-12 sm:mb-16">
+              <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">Our Solution</h3>
               <p className="leading-relaxed">{projectData.solution}</p>
             </div>
           </motion.div>
 
           <motion.div variants={fadeInUp}>
-            <h2 className="text-3xl font-semibold mb-6 text-gray-800">Features</h2>
-            <ul className="space-y-4">
+            <h2 className="text-2xl sm:text-3xl font-semibold mb-4 sm:mb-6 text-gray-800">Features</h2>
+            <ul className="space-y-3 sm:space-y-4">
               {projectData.features.map((feature, index) => (
                 <li key={index} className="flex items-center">
-                  <span className="text-2xl mr-4 text-gray-400">0{index + 1}</span>
+                  <span className="text-xl sm:text-2xl mr-3 sm:mr-4 text-gray-400">0{index + 1}</span>
                   <span className="text-gray-700">{feature}</span>
                 </li>
               ))}
@@ -120,32 +120,32 @@ const ProjectPage = ({ project }) => {
                 alt={`${projectData.title} - Image 3`}
                 width={800}
                 height={600}
-                className="rounded-2xl shadow-lg object-cover w-full h-[400px]"
+                className="rounded-xl sm:rounded-2xl shadow-lg object-cover w-full h-[300px] sm:h-[400px]"
               />
             </div>
           </motion.div>
 
           <motion.div 
             variants={fadeInUp}
-            className="md:col-span-2 bg-white rounded-2xl shadow-lg p-8 mb-16 relative overflow-hidden"
+            className="md:col-span-2 bg-white rounded-xl sm:rounded-2xl shadow-lg p-6 sm:p-8 mb-12 sm:mb-16 relative overflow-hidden"
           >
-            <div className="absolute top-0 left-0 w-24 h-24 bg-gray-200 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-            <div className="absolute bottom-0 right-0 w-32 h-32 bg-gray-200 rounded-full translate-x-1/2 translate-y-1/2"></div>
+            <div className="absolute top-0 left-0 w-16 sm:w-24 h-16 sm:h-24 bg-gray-200 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+            <div className="absolute bottom-0 right-0 w-24 sm:w-32 h-24 sm:h-32 bg-gray-200 rounded-full translate-x-1/2 translate-y-1/2"></div>
             <div className="relative z-10">
-              <h2 className="text-3xl font-semibold mb-4 text-gray-800">Client Testimonial</h2>
-              <blockquote className="text-gray-600 italic mb-4 text-lg">"{projectData.testimonial.quote}"</blockquote>
+              <h2 className="text-2xl sm:text-3xl font-semibold mb-3 sm:mb-4 text-gray-800">Client Testimonial</h2>
+              <blockquote className="text-gray-600 italic mb-3 sm:mb-4 text-base sm:text-lg">"{projectData.testimonial.quote}"</blockquote>
               <p className="text-gray-800 font-medium">- {projectData.testimonial.author}</p>
             </div>
           </motion.div>
         </div>
 
-        <motion.div variants={fadeInUp} className="mt-16">
+        <motion.div variants={fadeInUp} className="mt-12 sm:mt-16">
           <Image
             src={projectData.images[3]}
             alt={`${projectData.title} - Image 4`}
             width={1920}
             height={1080}
-            className="rounded-2xl shadow-lg object-cover w-full h-[50vh]"
+            className="rounded-xl sm:rounded-2xl shadow-lg object-cover w-full h-[40vh] sm:h-[50vh]"
           />
         </motion.div>
       </motion.div>
