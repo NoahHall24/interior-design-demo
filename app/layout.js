@@ -6,8 +6,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import { TransitionProvider, useTransition } from "@/components/TransitionContext";
-import { useEffect, Suspense, useCallback } from 'react';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const playfair = Playfair_Display({
@@ -16,41 +16,20 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const TRANSITION_DURATION = 800; // Match this with the duration in your PageTransition component
-
-function SearchParamsHandler({ onSearchParamsChange }) {
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    onSearchParamsChange(searchParams);
-  }, [searchParams, onSearchParamsChange]);
-
-  return null;
-}
+const TRANSITION_DURATION = 1400; // Match this with the duration in your PageTransition component
 
 function TransitionHandler({ children }) {
   const pathname = usePathname();
   const { startTransition, endTransition, isTransitioning, showContent } = useTransition();
 
-  const handleTransition = useCallback(() => {
+  useEffect(() => {
     startTransition();
     const timer = setTimeout(endTransition, TRANSITION_DURATION);
     return () => clearTimeout(timer);
-  }, [startTransition, endTransition]);
-
-  useEffect(() => {
-    handleTransition();
-  }, [pathname, handleTransition]);
-
-  const handleSearchParamsChange = useCallback(() => {
-    handleTransition();
-  }, [handleTransition]);
+  }, [pathname, startTransition, endTransition]);
 
   return (
     <>
-      <Suspense fallback={null}>
-        <SearchParamsHandler onSearchParamsChange={handleSearchParamsChange} />
-      </Suspense>
       <AnimatePresence mode="wait">
         {isTransitioning && <PageTransition key="transition" />}
       </AnimatePresence>
