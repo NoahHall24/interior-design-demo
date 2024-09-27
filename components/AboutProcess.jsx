@@ -41,22 +41,22 @@ const AboutProcess = () => {
     { 
       title: "Visionary Consultation", 
       description: "We begin with an immersive discussion to understand your aspirations and lifestyle needs. This crucial step sets the foundation for a transformative collaboration.",
-      image: "/images/swiper1.jpg"
+      image: "/images/1process.jpg"
     },
     { 
       title: "Conceptual Artistry", 
       description: "Our expert team crafts bespoke design concepts tailored to your unique requirements. We blend innovative creativity with practical functionality.",
-      image: "/images/swiper4.jpg"
+      image: "/images/2 process.jpg"
     },
     { 
       title: "Collaborative Refinement", 
       description: "We present our concepts and engage in a dynamic feedback process. This iterative journey allows us to fine-tune the design to reflect your vision.",
-      image: "/images/swiper5.jpg"
+      image: "/images/3process.jpg"
     },
     { 
       title: "Meticulous Realization", 
       description: "Once the design is perfected, we oversee the entire implementation process. From sourcing exquisite materials to coordinating skilled craftsmen.",
-      image: "/images/swiper6.jpg"
+      image: "/images/4process.jpg"
     }
   ];
 

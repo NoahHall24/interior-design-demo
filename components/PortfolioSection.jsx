@@ -23,7 +23,7 @@ const ProjectReveal = ({ project }) => {
   const textScale = useTransform(scrollYProgress, [0.3, 0.6], [0.8, 1]);
 
   return (
-    <section ref={sectionRef} className="min-h-[60vh] md:min-h-screen flex items-center justify-center relative overflow-hidden py-6 md:py-0">
+    <section ref={sectionRef} className="min-h-[60vh] md:min-h-[80vh] flex items-center justify-center relative overflow-hidden py-6 md:py-0">
       <motion.div 
         className="absolute w-2/5 h-[50vh] left-[30%] z-30 md:block hidden"
         style={{ x: leftImageX, scale: imageScale, rotate: imageRotate }}
