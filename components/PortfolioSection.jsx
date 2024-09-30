@@ -113,16 +113,16 @@ const PortfolioSection = () => {
       id: 'project1',
       title: "Avant-Garde Office",
       category: "Commercial",
-      image1: "/images/swiper1.jpg",
-      image2: "/images/swiper4.jpg",
+      image1: "/images/land1.jpg",
+      image2: "/images/land2.jpg",
       description: "A cutting-edge workspace blending functionality with artistic flair."
     },
     {
       id: 'project1',
       title: "Luxe Boutique Hotel",
       category: "Hospitality",
-      image1: "/images/swiper1.jpg",
-      image2: "/images/swiper4.jpg",
+      image1: "/images/land4.jpg",
+      image2: "/images/land3.jpg",
       description: "An exclusive boutique hotel offering unparalleled luxury and personalized experiences."
     },
   ];

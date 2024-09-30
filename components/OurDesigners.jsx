@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaLinkedinIn, FaInstagram, FaEnvelope, FaQuoteLeft } from 'react-icons/fa';
 
 const SocialIcon = ({ Icon, href }) => (
-  <a href={href} target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#D4AF37] transition-colors duration-300">
+  <a href={href} target="_blank" rel="noopener noreferrer" className="text-white hover:text-slateblue transition-colors duration-300">
     <Icon size={20} />
   </a>
 );
@@ -41,7 +41,7 @@ const DesignerCard = ({ name, role, image, linkedin, instagram, email, quote, in
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              <FaQuoteLeft className="text-[#D4AF37] text-3xl mb-3" />
+              <FaQuoteLeft className="text-slateblue text-3xl mb-3" />
               <p className="text-white text-center text-lg italic mb-4">{quote}</p>
               <div className="flex space-x-6">
                 <SocialIcon Icon={FaLinkedinIn} href={linkedin} />
@@ -109,7 +109,7 @@ const OurDesigners = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Our <span className="text-[#D4AF37]">Visionary Designers</span>
+          Our <span className="text-slateblue">Visionary Designers</span>
         </motion.h2>
         <motion.p
           className="text-lg text-center text-gray-600 mb-12 max-w-4xl mx-auto" 
