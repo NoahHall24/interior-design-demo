@@ -15,9 +15,9 @@ const ProcessStep = ({ number, title, description, image }) => {
       <div className="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-md p-4 sm:p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
         <div className="w-full md:w-1/3 mb-4 sm:mb-6 md:mb-0 md:pr-6 lg:pr-8">
           <div className="relative">
-            <div className="absolute -left-2 sm:-left-4 -top-2 sm:-top-4 w-12 sm:w-16 h-12 sm:h-16 bg-[#2C3E50] text-white rounded-full flex items-center justify-center z-10">
-              <span className="text-xl sm:text-2xl font-light">{number}</span>
-            </div>
+          <div className="absolute -left-1 sm:-left-3 -top-1 sm:-top-3 w-10 sm:w-14 h-10 sm:h-14 bg-[#2C3E50] text-white rounded-full flex items-center justify-center z-10">
+            <span className="text-xl sm:text-2xl font-light leading-none mt-[-3px]">{number}</span>
+          </div>
             <Image
               src={image}
               alt={title}
@@ -39,23 +39,23 @@ const ProcessStep = ({ number, title, description, image }) => {
 const AboutProcess = () => {
   const steps = [
     { 
-      title: "Visionary Consultation", 
-      description: "We begin with an immersive discussion to understand your aspirations and lifestyle needs. This crucial step sets the foundation for a transformative collaboration.",
+      title: "Initial Consultation", 
+      description: "We kick off our process with a personal consultation to dive into your vision. This is an opportunity for us to understand your needs, preferences, and lifestyle, ensuring we create a space that truly reflects you.",
       image: "/images/1process.jpg"
     },
     { 
-      title: "Conceptual Artistry", 
-      description: "Our expert team crafts bespoke design concepts tailored to your unique requirements. We blend innovative creativity with practical functionality.",
+      title: "Planning & Design", 
+      description: "Next, we turn your ideas into a comprehensive design plan. Our team develops detailed layouts, selects materials, and curates color palettes, crafting a cohesive look that balances aesthetics and functionality.",
       image: "/images/2 process.jpg"
     },
     { 
-      title: "Collaborative Refinement", 
-      description: "We present our concepts and engage in a dynamic feedback process. This iterative journey allows us to fine-tune the design to reflect your vision.",
+      title: "Procurement & Implementation", 
+      description: "Once the design is approved, we manage all procurement and logistics. Our experienced team coordinates with trusted vendors, ensuring a smooth implementation process and attention to detail at every step.",
       image: "/images/3process.jpg"
     },
     { 
-      title: "Meticulous Realization", 
-      description: "Once the design is perfected, we oversee the entire implementation process. From sourcing exquisite materials to coordinating skilled craftsmen.",
+      title: "Final Reveal & Follow-Up", 
+      description: "Finally, we unveil your beautifully transformed space. This exciting moment showcases the culmination of our collaboration, ensuring that every detail aligns with your vision and exceeds your expectations.",
       image: "/images/4process.jpg"
     }
   ];

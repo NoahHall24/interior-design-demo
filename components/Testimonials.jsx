@@ -69,7 +69,7 @@ const TestimonialSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Discover why discerning clients choose Lex Interiors for their luxury design needs
+          A picture says a thousand words. Testimonial's even more.
         </motion.p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {testimonials.map((testimonial) => (

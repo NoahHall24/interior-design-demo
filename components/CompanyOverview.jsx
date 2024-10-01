@@ -46,7 +46,7 @@ const CompanyOverview = () => {
           >
             <div className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] w-full overflow-hidden rounded-lg shadow-xl">
               <Image
-                src="/images/swiper4.jpg" // Replace with your image path
+                src="/images/gallery1123.jpg" // Replace with your image path
                 alt="Luxurious interior design by Lex Interiors"
                 layout="fill"
                 objectFit="cover"

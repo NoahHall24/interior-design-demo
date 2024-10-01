@@ -49,6 +49,27 @@ const projects = [
     image: '/images/swiper1.jpg',
     gallery: ['/images/swiper1.jpg', '/images/gallery1.jpg', '/images/kitchen1.jpg']
   },
+  {
+    id: 7,
+    title: 'Rural Farmhouse Estate',
+    description: 'Relaxing rural living space with modern amenities',
+    image: '/images/land4.jpg',
+    gallery: ['/images/land4.jpg', '/images/land3.jpg', '/images/land2.jpg']
+  },
+  {
+    id: 8,
+    title: 'Modern Suburban Oasis',
+    description: 'Personal Oasis just minutes from the city center',
+    image: '/images/land3.jpg',
+    gallery: ['/images/land3.jpg', '/images/land4.jpg', '/images/land2.jpg']
+  },
+  {
+    id: 9,
+    title: 'Victorian Estate',
+    description: 'Relaxing Victorian living space with modern amenities',
+    image: '/images/land2.jpg',
+    gallery: ['/images/land2.jpg', '/images/land3.jpg', '/images/land4.jpg']
+  }
 ];
 
 const RecentProjects = () => {
@@ -143,7 +164,7 @@ const RecentProjects = () => {
               ),
             }}
             carousel={{
-              finite: selectedProject.gallery.length <= 5,
+              finite: false,
             }}
             controller={{
               closeOnBackdropClick: true,

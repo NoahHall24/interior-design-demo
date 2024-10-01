@@ -4,21 +4,15 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaFacebookF, FaInstagram, FaPinterestP, FaLinkedinIn, FaMapMarkerAlt, FaEnvelope, FaPhone, FaQuoteLeft, FaClock } from 'react-icons/fa';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+
 
 const Footer = () => {
-  const currentPath = usePathname();
+  
   const [activeQuote, setActiveQuote] = useState(0);
 
-  const allLinks = [
-    { path: '/', name: 'Home' },
-    { path: '/about', name: 'About' },
-    { path: '/portfolio', name: 'Portfolio' },
-    { path: '/gallery', name: 'Gallery' },
-    { path: '/contact', name: 'Contact' }
-  ];
 
-  const navigationLinks = allLinks.filter(link => link.path !== currentPath);
+
+  
 
   const newQuotes = [
     { quote: "Design is not just what it looks like and feels like. Design is how it works.", author: "Steve Jobs" },
@@ -58,10 +52,10 @@ const Footer = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
             >
               {[
-                { icon: <FaFacebookF size={20} />, label: "Facebook", href: "#" },
-                { icon: <FaInstagram size={20} />, label: "Instagram", href: "#" },
-                { icon: <FaPinterestP size={20} />, label: "Pinterest", href: "#" },
-                { icon: <FaLinkedinIn size={20} />, label: "LinkedIn", href: "#" }
+                { icon: <FaFacebookF size={20} />, label: "Facebook", href: "https://www.facebook.com/" },
+                { icon: <FaInstagram size={20} />, label: "Instagram", href: "https://www.instagram.com/" },
+                { icon: <FaPinterestP size={20} />, label: "Pinterest", href: "https://www.pinterest.com/" },
+                { icon: <FaLinkedinIn size={20} />, label: "LinkedIn", href: "https://www.linkedin.com/" }
               ].map(({ icon, label, href }) => (
                 <motion.a 
                   key={label} 
@@ -121,7 +115,7 @@ const Footer = () => {
               Design Wisdom
             </motion.h3>
             <motion.div 
-              className="relative h-32"
+              className="relative h-20"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration:.5 , delay:.4}}
