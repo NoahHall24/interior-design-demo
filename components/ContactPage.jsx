@@ -41,13 +41,21 @@ const ContactPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-[#2C3E50] to-[#708090] text-white overflow-hidden">
       <div className="container mx-auto px-4 py-16 relative">
         <motion.h1 
-          className="text-5xl font-extrabold mb-16 text-center"
+          className="text-5xl font-extrabold mb-8 text-center"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          Transform Your Space, Elevate Your Life
+          Bringing Your <span className="text-[#D4AF37] italic">Vision To Life</span>
         </motion.h1>
+        <motion.h2
+          className="text-xl max-w-4xl mx-auto text-lightgray font-light mb-12 text-center"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        >
+        With meticulous attention to detail and a commitment to excellence, we ensure every project not only meets but exceeds your expectations. Let&apos;s connect and start designing the space of your dreams! 
+        </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div 
@@ -121,7 +129,7 @@ const ContactPage = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <Image 
-              src="/images/swiper1.jpg" 
+              src="/images/contact3.jpg" 
               alt="Elegant Interior Design" 
               layout="fill"
               objectFit="cover"
@@ -157,7 +165,7 @@ const ContactPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <h2 className="text-4xl font-light mb-8 text-center">Elevate Your Space</h2>
+          <h2 className="text-4xl font-light mb-8 text-center">Elevate Your <span className="text-[#D4AF37]">Space</span></h2>
           <div className="flex flex-wrap justify-center items-center gap-8">
             <motion.div 
               className="flex items-center bg-white bg-opacity-10 rounded-full px-6 py-3 transition-all duration-300 hover:bg-opacity-20"
