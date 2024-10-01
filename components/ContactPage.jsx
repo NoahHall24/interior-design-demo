@@ -172,28 +172,28 @@ const ContactPage = () => {
               whileHover={{ scale: 1.05 }}
             >
               <FaMapMarkerAlt className="text-[#D4AF37] mr-3 text-2xl" />
-              <span className="text-white">123 Design Street, Creativity City, ST 12345</span>
+              <span className="text-white">123 Luxury Lane, Elegance City</span>
             </motion.div>
             <motion.div 
               className="flex items-center bg-white bg-opacity-10 rounded-full px-6 py-3 transition-all duration-300 hover:bg-opacity-20"
               whileHover={{ scale: 1.05 }}
             >
               <FaPhone className="text-[#D4AF37] mr-3 text-2xl" />
-              <span className="text-white">(123) 456-7890</span>
+              <span className="text-white">(555) 123-4567</span>
             </motion.div>
             <motion.div 
               className="flex items-center bg-white bg-opacity-10 rounded-full px-6 py-3 transition-all duration-300 hover:bg-opacity-20"
               whileHover={{ scale: 1.05 }}
             >
               <FaEnvelope className="text-[#D4AF37] mr-3 text-2xl" />
-              <span className="text-white">info@yourcompany.com</span>
+              <span className="text-white">info@lexinteriors.com</span>
             </motion.div>
             <motion.div 
               className="flex items-center bg-white bg-opacity-10 rounded-full px-6 py-3 transition-all duration-300 hover:bg-opacity-20"
               whileHover={{ scale: 1.05 }}
             >
               <FaClock className="text-[#D4AF37] mr-3 text-2xl" />
-              <span className="text-white">Mon-Fri: 9am - 6pm, Sat: 10am - 4pm</span>
+              <span className="text-white">Mon-Fri: 9am - 5pm</span>
             </motion.div>
           </div>
         </motion.div>
